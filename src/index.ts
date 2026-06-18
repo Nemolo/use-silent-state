@@ -1,2 +1,2 @@
-export { useSilentState } from "./useSilentState";
-export type { SilentState } from "./useSilentState";
+export { useSilentState, useWatchSilentState } from './useSilentState';
+export type { SilentState, SubscriptionFn } from './useSilentState';

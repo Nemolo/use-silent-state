@@ -1,22 +1,39 @@
-import tseslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
+import js from '@eslint/js';
+import eslintConfigPrettier from 'eslint-plugin-prettier/recommended';
+import pluginReact from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import pluginUnusedImports from 'eslint-plugin-unused-imports';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default [
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
-    files: ["src/**/*.{ts,tsx}"],
+    ignores: ['**/dist', '**/node_modules', '**/coverage'],
+  },
+  {
+    files: ['**/*.{ts,tsx}'],
+    plugins: {
+      react: pluginReact,
+      'react-hooks': reactHooks,
+      '@typescript-eslint': tseslint.plugin,
+      'unused-imports': pluginUnusedImports,
+    },
     languageOptions: {
-      parser: tsParser,
+      ecmaVersion: 2023,
+      globals: globals.browser,
       parserOptions: {
-        project: "./tsconfig.json",
+        project: ['./tsconfig.json'],
+        tsconfigRootDir: import.meta.dirname,
       },
     },
-    plugins: {
-      "@typescript-eslint": tseslint,
-    },
+    settings: { react: { version: 'detect' } },
     rules: {
-      ...tseslint.configs.recommended.rules,
-      "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/explicit-function-return-type": "off",
+      ...reactHooks.configs.recommended.rules,
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
+  eslintConfigPrettier,
 ];
