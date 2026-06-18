@@ -85,7 +85,7 @@
     "unreleased": true,
     "commitLimit": false,
     "hideCredit": true,
-    "ignoreCommitPattern": "^(chore|ci|test|build|style)(\\(.+\\))?:"
+    "ignoreCommitPattern": "^(ci|test|build|style)(\\(.+\\))?:"
   },
   "devEngines": {
     "packageManager": {
