@@ -1,6 +1,6 @@
 # use-silent-state
 
-[![CI](https://github.com/Nemolo/use-silent-state/actions/workflows/ci.yml/badge.svg)](https://github.com/Nemolo/use-silent-state/actions/workflows/ci.yml)
+[![CI](https://github.com/Nemolo/use-silent-state/actions/workflows/publish.yml/badge.svg)](https://github.com/Nemolo/use-silent-state/actions/workflows/publish.yml)
 [![npm](https://img.shields.io/npm/v/use-silent-state)](https://www.npmjs.com/package/use-silent-state)
 [![license](https://img.shields.io/npm/l/use-silent-state)](./LICENSE)
 
