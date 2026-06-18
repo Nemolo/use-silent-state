@@ -9,9 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     steps:
       - uses: actions/checkout@v4
 
@@ -27,7 +24,3 @@ jobs:
       - run: pnpm typecheck
 
       - run: pnpm test:coverage
-
-      - uses: codecov/codecov-action@v5
-        with:
-          use_oidc: true
