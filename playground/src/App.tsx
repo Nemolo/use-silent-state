@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/refs */
 import { useRef, useState } from 'react';
 import { useSilentState, useWatchSilentState } from 'use-silent-state';
 import type { SilentState } from 'use-silent-state';
@@ -11,6 +12,21 @@ function WatchedDisplay({ silent }: { silent: SilentState<number> }) {
     <div style={{ background: '#f0f4ff', padding: '1rem', borderRadius: '6px' }}>
       <p>
         Watched value: <strong>{value}</strong>
+      </p>
+      <p style={{ color: '#888', fontSize: '0.85rem' }}>Render count: {renderCount.current}</p>
+    </div>
+  );
+}
+
+function WatchedDisplaySelector({ silent }: { silent: SilentState<number> }) {
+  const renderCount = useRef(0);
+  renderCount.current++;
+  const value = useWatchSilentState(silent, (data) => (data & 3) === 0);
+
+  return (
+    <div style={{ background: '#f0f4ff', padding: '1rem', borderRadius: '6px' }}>
+      <p>
+        Watched value is divisible by 3: <strong>{value ? 'yes' : 'no'}</strong>
       </p>
       <p style={{ color: '#888', fontSize: '0.85rem' }}>Render count: {renderCount.current}</p>
     </div>
@@ -56,6 +72,16 @@ export default function App() {
         <button onClick={() => silent.set((n) => n + 1)}>increment (+1)</button>
         <p style={{ color: '#888', fontSize: '0.85rem' }}>
           Questo componente si ri-renderizza ad ogni modifica tramite la subscription.
+        </p>
+      </section>
+
+      <section>
+        <h2>useWatchSilentState (re-renders on change) with selector</h2>
+        <WatchedDisplaySelector silent={silent} />
+        <br />
+        <button onClick={() => silent.set((n) => n + 1)}>increment (+1)</button>
+        <p style={{ color: '#888', fontSize: '0.85rem' }}>
+          Questo componente si ri-renderizza ad ogni 3 modifiche tramite la subscription.
         </p>
       </section>
     </div>
