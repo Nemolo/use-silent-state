@@ -2,8 +2,16 @@
   "name": "use-silent-state",
   "version": "0.1.0",
   "description": "A React hook for state that doesn't trigger re-renders",
-  "author": "",
+  "author": "Fabrizio Marconi",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nemolo/use-silent-state.git"
+  },
+  "homepage": "https://github.com/Nemolo/use-silent-state#readme",
+  "bugs": {
+    "url": "https://github.com/Nemolo/use-silent-state/issues"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
