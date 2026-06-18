@@ -22,5 +22,6 @@ run('git add package.json pnpm-lock.yaml CHANGELOG.md');
 run(`git commit -m "chore: release v${version}"`);
 
 // 4. tag and push (triggers the publish workflow)
-run(`git tag v${version}`);
+// annotated tag required: git push --follow-tags ignores lightweight tags
+run(`git tag -a v${version} -m "v${version}"`);
 run('git push --follow-tags');
