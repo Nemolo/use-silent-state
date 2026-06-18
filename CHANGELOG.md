@@ -5,10 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v0.2.0](https://github.com/Nemolo/use-silent-state/compare/v0.1.3...v0.2.0)
+## [v0.2.1](https://github.com/Nemolo/use-silent-state/compare/v0.2.0...v0.2.1)
 
 ### Commits
 
+- chore: enanched documentation [`8410868`](https://github.com/Nemolo/use-silent-state/commit/8410868796f68e5811cda1fbfd4139b6a7dcecb3)
+- fix: use projectService for ESLint tsconfig resolution across workspace [`0c5dc58`](https://github.com/Nemolo/use-silent-state/commit/0c5dc5891b5b752ce5e64c6ff617e3b9cb79422b)
+
+## [v0.2.0](https://github.com/Nemolo/use-silent-state/compare/v0.1.3...v0.2.0) - 2026-06-18
+
+### Commits
+
+- chore: release v0.2.0 [`673b8ca`](https://github.com/Nemolo/use-silent-state/commit/673b8ca3d4e702e30c2e65aa0dad4a81c6e8a8c0)
 - chore: ignore common pattern changelog [`6d47532`](https://github.com/Nemolo/use-silent-state/commit/6d4753279b4761190963b2882b16b92b735f781e)
 
 ## [v0.1.3](https://github.com/Nemolo/use-silent-state/compare/v0.1.2...v0.1.3) - 2026-06-18
