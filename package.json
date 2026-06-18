@@ -84,7 +84,8 @@
     "template": "keepachangelog",
     "unreleased": true,
     "commitLimit": false,
-    "hideCredit": true
+    "hideCredit": true,
+    "ignoreCommitPattern": "^(chore|ci|test|build|style)(\\(.+\\))?:"
   },
   "devEngines": {
     "packageManager": {
