@@ -1,6 +1,7 @@
 node_modules/
 dist/
 coverage/
+playground/dist/
 *.local
 .env
 .DS_Store
