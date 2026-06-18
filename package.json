@@ -1,7 +1,7 @@
 {
   "name": "use-silent-state",
   "version": "0.1.0",
-  "description": "A Simple React/Preact hook for state that doesn't trigger re-renders",
+  "description": "A React hook for state that doesn't trigger re-renders",
   "author": "",
   "license": "MIT",
   "type": "module",
@@ -31,16 +31,7 @@
     "playground": "pnpm --filter playground dev"
   },
   "peerDependencies": {
-    "preact": ">=10",
     "react": ">=16"
-  },
-  "peerDependenciesMeta": {
-    "react": {
-      "optional": true
-    },
-    "preact": {
-      "optional": true
-    }
   },
   "devDependencies": {
     "@testing-library/react": "^16.3.2",
@@ -53,7 +44,7 @@
     "@vitest/ui": "^4.1.9",
     "eslint": "^10.5.0",
     "jsdom": "^29.1.1",
-    "preact": "^10.29.2",
+
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "tsup": "^8.5.1",
@@ -62,7 +53,6 @@
   },
   "keywords": [
     "react",
-    "preact",
     "hook",
     "state",
     "ref",
