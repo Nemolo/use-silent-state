@@ -21,7 +21,7 @@ function WatchedDisplay({ silent }: { silent: SilentState<number> }) {
 function WatchedDisplaySelector({ silent }: { silent: SilentState<number> }) {
   const renderCount = useRef(0);
   renderCount.current++;
-  const value = useWatchSilentState(silent, (data) => (data & 3) === 0);
+  const value = useWatchSilentState(silent, (data) => data % 3 === 0);
 
   return (
     <div style={{ background: '#f0f4ff', padding: '1rem', borderRadius: '6px' }}>

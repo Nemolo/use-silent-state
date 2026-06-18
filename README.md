@@ -19,9 +19,9 @@ Common use cases:
 ## Installation
 
 ```bash
-npm install use-silent-state
-# or
 pnpm add use-silent-state
+# or
+npm install use-silent-state
 ```
 
 Requires React 16 or later.
@@ -33,7 +33,7 @@ Requires React 16 or later.
 Creates a piece of silent state. Returns a `SilentState` object with three methods:
 
 | Method | Description |
-|--------|-------------|
+| -------- | ------------- |
 | `get()` | Returns the current value |
 | `set(value \| updater)` | Updates the value and notifies subscribers. Supports updater functions like `useState`. |
 | `subscribe(fn)` | Registers a callback invoked on every `set()`. Returns an unsubscribe function. |
@@ -54,6 +54,7 @@ function MyComponent() {
 ```
 
 ### `useWatchSilentState<T>(state): T`
+
 ### `useWatchSilentState<T, D>(state, selector): D`
 
 Subscribes a component to a `SilentState`. The component re-renders whenever `set()` is called (or only when the selected value changes, if a selector is provided).
@@ -68,19 +69,24 @@ const x = useWatchSilentState(positionState, (p) => p.x);
 
 Uses `useSyncExternalStore` internally — safe for React 18 Concurrent Mode, no double-render gap.
 
-#### Selector memoization
+#### Selector and object values
 
-If your selector returns an **object** (non-primitive), wrap it with `useCallback` to avoid infinite re-renders:
+`useSyncExternalStore` compares snapshots with `Object.is`. A selector that returns a **new object on every call** loses its optimization benefit: even if the selected fields didn't change, `Object.is({}, {})` is always `false`, so the component re-renders on every store update.
 
 ```tsx
-// ✅ primitive — stable by value, no memoization needed
+// ✅ primitive — compared by value, re-renders only when the value changes
 const count = useWatchSilentState(state, (s) => s.count);
 
-// ✅ object — must be memoized
-const sub = useWatchSilentState(
-  state,
-  useCallback((s) => ({ x: s.x, y: s.y }), [])
-);
+// ⚠️ object — re-renders on every store update regardless of whether x/y changed
+const point = useWatchSilentState(state, (s) => ({ x: s.x, y: s.y }));
+```
+
+If you need a derived object, select primitives and compose them with `useMemo`:
+
+```tsx
+const x = useWatchSilentState(state, (s) => s.x);
+const y = useWatchSilentState(state, (s) => s.y);
+const point = useMemo(() => ({ x, y }), [x, y]);
 ```
 
 ## Full example
