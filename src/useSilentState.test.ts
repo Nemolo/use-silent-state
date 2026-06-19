@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { useSilentState, useWatchSilentState } from './useSilentState';
+import { useSilentState, useWatchSilentState } from '.';
 
 describe('useSilentState', () => {
   it('returns the initial value via get()', () => {
