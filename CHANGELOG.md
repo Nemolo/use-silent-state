@@ -5,12 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v0.2.1](https://github.com/Nemolo/use-silent-state/compare/v0.2.0...v0.2.1)
+## [v0.3.0](https://github.com/Nemolo/use-silent-state/compare/v0.2.1...v0.3.0)
+
+### Commits
+
+- feat: moved useWatchSilentState to maybe improve bundle size [`841a52b`](https://github.com/Nemolo/use-silent-state/commit/841a52bff3a2c3f247bf34ee30e75384a43d827d)
+
+## [v0.2.1](https://github.com/Nemolo/use-silent-state/compare/v0.2.0...v0.2.1) - 2026-06-18
 
 ### Commits
 
 - chore: enanched documentation [`8410868`](https://github.com/Nemolo/use-silent-state/commit/8410868796f68e5811cda1fbfd4139b6a7dcecb3)
 - fix: use projectService for ESLint tsconfig resolution across workspace [`0c5dc58`](https://github.com/Nemolo/use-silent-state/commit/0c5dc5891b5b752ce5e64c6ff617e3b9cb79422b)
+- chore: release v0.2.1 [`641b260`](https://github.com/Nemolo/use-silent-state/commit/641b260d5c7df833dc5e920ea498d404c7e3ad8b)
 
 ## [v0.2.0](https://github.com/Nemolo/use-silent-state/compare/v0.1.3...v0.2.0) - 2026-06-18
 

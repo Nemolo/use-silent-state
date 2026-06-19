@@ -1,6 +1,6 @@
 {
   "name": "use-silent-state",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A React hook for state that doesn't trigger re-renders",
   "author": "Fabrizio Marconi",
   "license": "MIT",
